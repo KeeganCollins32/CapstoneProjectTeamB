@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Capstone1.Site" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="PageTitle" runat="server">
+            Cincy Dent Repair
+        </asp:ContentPlaceHolder>
+    </title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <!-- Additional head content specific to each page will be injected here -->
+        <!-- For example, additional meta tags, stylesheets, scripts, etc. -->
+    </asp:ContentPlaceHolder>
+    <link href="Styles/Site.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <script src="Scripts/hero-slider.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        
+        <!-- Header Section -->
+        <div class="header">
+            <div class="nav-left">
+                <a href="Default.aspx" class='<%= CheckActive("Default.aspx") %>'>Home</a>
+                <a href="Estimate.aspx" class='<%= CheckActive("Estimate.aspx") %>'>Get Estimate</a>
+                <a href="AboutUs.aspx" class='<%= CheckActive("AboutUs.aspx") %>'>About Us</a>
+            </div>
+            <div class="logo">
+                <img src="https://th.bing.com/th/id/OIP.goBzdC-EP_C01MG0CW5w-gHaHa?w=184&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Cincy Dent Repair Logo"/>
+            </div>
+            <div class="nav-right">
+                <div class="nav-right">
+                    <a href="Login.aspx" class='<%= CheckActive("Login.aspx") %>'>Log in</a>
+                    <a href="Signup.aspx" class='<%= CheckActive("Signup.aspx") %>'>Sign Up</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content Section -->
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            <!-- Content specific to each page will be injected here -->
+        </asp:ContentPlaceHolder>
+        
+        <!-- Subscribe Section -->
+        <asp:ContentPlaceHolder ID="SubscribeContent" runat="server">
+            <section class="content">
+                <div class="subscribe">
+                    <h3>Stay Updated with Our Latest Offers and News</h3>
+                    <p>Subscribe to our newsletter to receive updates on our services, special offers, and industry news. Don't miss out on valuable information that can benefit you.</p>
+                    <asp:TextBox ID="EmailTextBox" runat="server" CssClass="form-control" placeholder="Enter your email address" />
+                    <asp:Button ID="SubscribeButton" runat="server" Text="Subscribe" CssClass="button-primary" />
+                </div>
+            </section>
+        </asp:ContentPlaceHolder>
+        
+        <!-- Footer Section -->
+        <footer>
+            <asp:ContentPlaceHolder ID="footerContent" runat="server">
+                <!-- Default footer content here -->
+                <p>&copy; 2024 Cincy Dent Repair. All rights reserved.</p>
+                <div class="footer-links">
+                    <asp:HyperLink ID="PrivacyLink" runat="server" NavigateUrl="~/Privacy.aspx">Privacy Policy</asp:HyperLink>
+                    <asp:HyperLink ID="TermsLink" runat="server" NavigateUrl="~/Terms.aspx">Terms of Service</asp:HyperLink>
+                    <asp:HyperLink ID="ContactLink" runat="server" NavigateUrl="~/Contact.aspx">Contact Us</asp:HyperLink>
+                </div>
+            </asp:ContentPlaceHolder>
+        </footer>
+    </form>
+</body>
+</html>
+
