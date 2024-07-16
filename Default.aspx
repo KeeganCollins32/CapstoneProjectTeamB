@@ -53,7 +53,7 @@
                 <div class="service-text">
                     <h2>For Dealerships</h2>
                     <p>Effortlessly submit multiple vehicle details and damage photos for estimates.</p>
-                    <asp:Button ID="DealershipAccountButton" runat="server" Text="Create Account" CssClass="button-secondary" />
+                    <asp:Button ID="CreateAccountButton" runat="server" Text="Create Account" CssClass="button-secondary" PostBackUrl="~/SignUp.aspx" />
                 </div>
             </div>
         </div>
@@ -95,25 +95,5 @@
             <p>Check out our frequently asked questions section to find answers to common inquiries. If you can't find what you're looking for, feel free to contact us directly.</p>
             <asp:Button ID="FAQButton" runat="server" Text="View FAQs" CssClass="button-secondary" />
         </div>  
-    </div>
-</asp:Content>
-
-<asp:Content ID="Content4" ContentPlaceHolderID="SubscribeContent" runat="server">
-    <!-- Subscribe section -->
-    <div class="subscribe">
-        <h3>Stay Updated with Our Latest Offers and News</h3>
-        <p>Subscribe to our newsletter to receive updates on our services, special offers, and industry news. Don't miss out on valuable information that can benefit you.</p>
-        <asp:TextBox ID="EmailTextBox" runat="server" CssClass="form-control" placeholder="Enter your email address" />
-        <asp:Button ID="SubscribeButton" runat="server" Text="Subscribe" CssClass="button-primary" />
-    </div>
-</asp:Content>
-
-<asp:Content ID="Content5" ContentPlaceHolderID="footerContent" runat="server">
-    <!-- Page-specific footer content goes here -->
-    <p>&copy; 2024 Cincy Dent Repair. All rights reserved.</p>
-    <div class="footer-links">
-        <asp:HyperLink ID="PrivacyLink" runat="server" NavigateUrl="~/Privacy.aspx">Privacy Policy</asp:HyperLink>
-        <asp:HyperLink ID="TermsLink" runat="server" NavigateUrl="~/Terms.aspx">Terms of Service</asp:HyperLink>
-        <asp:HyperLink ID="ContactLink" runat="server" NavigateUrl="~/Contact.aspx">Contact Us</asp:HyperLink>
     </div>
 </asp:Content>

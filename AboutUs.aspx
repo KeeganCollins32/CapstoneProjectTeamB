@@ -72,23 +72,3 @@
         </section>
     </div>
 </asp:Content>
-
-<asp:Content ID="Content3" ContentPlaceHolderID="SubscribeContent" runat="server">
-    <!-- Subscribe section -->
-    <div class="subscribe">
-        <h3>Stay Updated with Our Latest Offers and News</h3>
-        <p>Subscribe to our newsletter to receive updates on our services, special offers, and industry news. Don't miss out on valuable information that can benefit you.</p>
-        <asp:TextBox ID="EmailTextBox" runat="server" CssClass="form-control" placeholder="Enter your email address" />
-        <asp:Button ID="SubscribeButton" runat="server" Text="Subscribe" CssClass="button-primary" />
-    </div>
-</asp:Content>
-
-<asp:Content ID="Content4" ContentPlaceHolderID="footerContent" runat="server">
-    <!-- Page-specific footer content goes here -->
-    <p>&copy; 2024 Cincy Dent Repair. All rights reserved.</p>
-    <div class="footer-links">
-        <asp:HyperLink ID="PrivacyLink" runat="server" NavigateUrl="~/Privacy.aspx">Privacy Policy</asp:HyperLink>
-        <asp:HyperLink ID="TermsLink" runat="server" NavigateUrl="~/Terms.aspx">Terms of Service</asp:HyperLink>
-        <asp:HyperLink ID="ContactLink" runat="server" NavigateUrl="~/Contact.aspx">Contact Us</asp:HyperLink>
-    </div>
-</asp:Content>

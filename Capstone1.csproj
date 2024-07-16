@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="AboutUs.aspx" />
+    <Content Include="Estimate.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="Scripts\hero-slider.js" />
@@ -96,6 +97,13 @@
     </Compile>
     <Compile Include="Email.cs" />
     <Compile Include="ErrorMessage.cs" />
+    <Compile Include="Estimate.aspx.cs">
+      <DependentUpon>Estimate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estimate.aspx.designer.cs">
+      <DependentUpon>Estimate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

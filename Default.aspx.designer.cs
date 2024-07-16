@@ -22,13 +22,13 @@ namespace Capstone1 {
 		protected global::System.Web.UI.WebControls.Button CustomerEstimateButton;
 
 		/// <summary>
-		/// DealershipAccountButton control.
+		/// CreateAccountButton control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button DealershipAccountButton;
+		protected global::System.Web.UI.WebControls.Button CreateAccountButton;
 
 		/// <summary>
 		/// FAQButton control.
@@ -38,50 +38,5 @@ namespace Capstone1 {
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Button FAQButton;
-
-		/// <summary>
-		/// EmailTextBox control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox EmailTextBox;
-
-		/// <summary>
-		/// SubscribeButton control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button SubscribeButton;
-
-		/// <summary>
-		/// PrivacyLink control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.HyperLink PrivacyLink;
-
-		/// <summary>
-		/// TermsLink control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.HyperLink TermsLink;
-
-		/// <summary>
-		/// ContactLink control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.HyperLink ContactLink;
 	}
 }
