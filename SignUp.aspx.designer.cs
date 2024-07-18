@@ -13,6 +13,24 @@ namespace Capstone1 {
 	public partial class SignUp {
 
 		/// <summary>
+		/// ErrorMessageUsername control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label ErrorMessageUsername;
+
+		/// <summary>
+		/// ErrorMessageEmail control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label ErrorMessageEmail;
+
+		/// <summary>
 		/// UserNameLabel control.
 		/// </summary>
 		/// <remarks>

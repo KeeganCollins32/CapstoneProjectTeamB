@@ -10,6 +10,7 @@
             margin: 20px auto;
             max-width: 1400px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
         }
 
         .hero {

@@ -12,13 +12,12 @@
         .signup-container {
             text-align: center;
             margin-top: 20px;
-            
         }
 
         .signup-form {
             display: inline-block;
             text-align: left;
-            width: 300px; /* Adjust width as needed */
+            width: 300px;
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
@@ -28,11 +27,11 @@
         .signup-label {
             font-weight: bold;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 7px;
         }
 
         .signup-input {
-            width: calc(100% - 20px); /* Adjust padding for left and right (10px each side) */
+            width: calc(100% - 20px);
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -42,8 +41,7 @@
         .error-message {
             color: red;
             font-size: 12px;
-            margin-top: -10px;
-            margin-bottom: 10px;
+            text-align: left;
         }
 
         .signup-checkbox {
@@ -81,34 +79,46 @@
         <h1 class="page-title">Sign Up - Cincy Dent Repair</h1>
         <div class="signup-container">
             <div class="signup-form">
+                <!-- Display ErrorMessageUsername -->
+                <asp:Label ID="ErrorMessageUsername" runat="server" CssClass="error-message" />
+                <!-- Display ErrorMessageEmail -->
+                <asp:Label ID="ErrorMessageEmail" runat="server" CssClass="error-message" />
+
+                <!-- Username input -->
                 <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName" CssClass="signup-label">Username:</asp:Label>
                 <asp:TextBox ID="UserName" runat="server" CssClass="signup-input"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="The username is required." CssClass="error-message" />
 
+                <!-- Email input -->
                 <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email" CssClass="signup-label">Email:</asp:Label>
                 <asp:TextBox ID="Email" runat="server" CssClass="signup-input"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" ErrorMessage="The email is required." CssClass="error-message" />
                 <asp:RegularExpressionValidator ID="EmailValidator" runat="server" ControlToValidate="Email"
                     ErrorMessage="Please enter a valid email address." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" CssClass="error-message" />
 
+                <!-- Password input -->
                 <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" CssClass="signup-label">Password:</asp:Label>
                 <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="signup-input"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="The password is required." CssClass="error-message" />
 
+                <!-- Confirm Password input -->
                 <asp:Label ID="ConfirmPasswordLabel" runat="server" AssociatedControlID="ConfirmPassword" CssClass="signup-label">Confirm Password:</asp:Label>
                 <asp:TextBox ID="ConfirmPassword" runat="server" TextMode="Password" CssClass="signup-input"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="ConfirmPasswordRequired" runat="server" ControlToValidate="ConfirmPassword" ErrorMessage="Please confirm your password." CssClass="error-message" />
                 <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
                     ErrorMessage="The passwords do not match." CssClass="error-message" />
 
+                <!-- Terms checkbox -->
                 <div class="centered">
                     <asp:CheckBox ID="AgreeTerms" runat="server" CssClass="signup-checkbox" Text="I agree to the Terms and Conditions" />
                 </div>
 
+                <!-- Sign Up button -->
                 <div class="signup-button">
                     <asp:Button ID="SignUpButton" runat="server" Text="Sign Up" CssClass="button-primary" OnClick="SignUpButton_Click" />
                 </div>
 
+                <!-- Login link -->
                 <div class="login-link">
                     Already have an account? <asp:HyperLink ID="LoginLink" runat="server" NavigateUrl="Login.aspx" CssClass="login-link">Log in</asp:HyperLink>
                 </div>

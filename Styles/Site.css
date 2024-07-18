@@ -2,7 +2,7 @@
 	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
-	background-color: #f4f4f4;
+	background-color: rgba(0, 0, 0, 0.2); /* Black background with 80% opacity */
 }
 
 .header {
@@ -65,7 +65,7 @@
 
 .nav-right {
 	text-align: right; /* Right align items in nav-right */
-	padding-right: 35px;
+	padding-right: 27px;
 }
 
 .content {
