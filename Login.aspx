@@ -11,8 +11,7 @@
 
         .login-container {
             text-align: center;
-            margin-top: 20px;
-            margin-left: 420px;
+            margin: 20px auto; /* Center horizontally and add some margin */
         }
 
         .login-form {
@@ -23,6 +22,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto; /* Center horizontally */
         }
 
         .login-label {
@@ -43,11 +43,6 @@
             color: red;
             font-size: 12px;
             margin-top: -10px;
-            margin-bottom: 10px;
-        }
-
-        .login-checkbox {
-            display: inline-block;
             margin-bottom: 10px;
         }
 
@@ -82,33 +77,29 @@
     <div class="content">
         <h1 class="page-title">Login - Cincy Dent Repair</h1>
         <div class="login-container">
-            <asp:Login ID="Login1" runat="server">
-                <LayoutTemplate>
-                    <div class="login-form">
-                        <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName" CssClass="login-label">Email or Username:</asp:Label>
-                        <asp:TextBox ID="UserName" runat="server" CssClass="login-input"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="The username is required." CssClass="error-message" />
+            <div class="login-form">
+                <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email" CssClass="login-label">Email:</asp:Label>
+                <asp:TextBox ID="Email" runat="server" CssClass="login-input"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" ErrorMessage="The email is required." CssClass="error-message" />
 
-                        <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" CssClass="login-label">Password:</asp:Label>
-                        <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="login-input"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="The password is required." CssClass="error-message" />
+                <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" CssClass="login-label">Password:</asp:Label>
+                <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="login-input"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="The password is required." CssClass="error-message" />
 
-                        <div class="centered">
-                            <asp:CheckBox ID="RememberMe" runat="server" CssClass="login-checkbox" Text="Remember me" />
-                        </div>
+                <div class="centered">
+                    <asp:CheckBox ID="RememberMe" runat="server" CssClass="login-checkbox" Text="Remember me" />
+                </div>
 
-                        <div class="login-button">
-                            <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" CssClass="button-primary" />
-                        </div>
+                <div class="login-button">
+                    <asp:Button ID="LoginButton" runat="server" Text="Log In" CssClass="button-primary" OnClick="LoginButton_Click" />
+                </div>
 
-                        <asp:HyperLink ID="ForgotPasswordLink" runat="server" NavigateUrl="ForgotPassword.aspx" CssClass="forgot-password">Forgot password?</asp:HyperLink>
+                <asp:HyperLink ID="ForgotPasswordLink" runat="server" NavigateUrl="ForgotPassword.aspx" CssClass="forgot-password">Forgot password?</asp:HyperLink>
 
-                        <div class="signup-link">
-                            Don’t have an account? <asp:HyperLink ID="SignupLink" runat="server" NavigateUrl="Signup.aspx" CssClass="signup-link">Sign up</asp:HyperLink>
-                        </div>
-                    </div>
-                </LayoutTemplate>
-            </asp:Login>
+                <div class="signup-link">
+                    Don’t have an account? <asp:HyperLink ID="SignupLink" runat="server" NavigateUrl="Signup.aspx" CssClass="signup-link">Sign up</asp:HyperLink>
+                </div>
+            </div>
         </div>
     </div>
 </asp:Content>

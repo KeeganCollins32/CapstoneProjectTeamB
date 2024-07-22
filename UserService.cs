@@ -11,17 +11,23 @@ public class UserService {
         _context = new MyDbContext();
     }
 
-    public bool RegisterUser(string email, string username, string password) {
-        // Check if the user already exists
-        if (_context.Users.Any(u => u.Email == email || u.Username == username)) {
-            return false; // User already exists
+    public bool RegisterUser(string email, string password, string firstName, string lastName, string phone, string role) {
+        // Check if the user already exists based on email
+        if (_context.Users.Any(u => u.Email == email)) {
+            return false; // Email already exists
         }
 
         // Create a new user
         var user = new User {
+            FirstName = firstName,
+            LastName = lastName,
             Email = email,
-            Username = username,
-            PasswordHash = HashPassword(password)
+            Phone = phone,
+            Role = role,
+            Password = HashPassword(password),
+            IsActive = true,
+            CreatedAt = DateTime.Now, // Set CreatedAt to the current date and time
+            UpdatedAt = DateTime.Now // Set UpdatedAt to the current date and time
         };
 
         // Save the user to the database

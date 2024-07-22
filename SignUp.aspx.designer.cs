@@ -31,31 +31,58 @@ namespace Capstone1 {
 		protected global::System.Web.UI.WebControls.Label ErrorMessageEmail;
 
 		/// <summary>
-		/// UserNameLabel control.
+		/// FirstNameLabel control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label UserNameLabel;
+		protected global::System.Web.UI.WebControls.Label FirstNameLabel;
 
 		/// <summary>
-		/// UserName control.
+		/// FirstName control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox UserName;
+		protected global::System.Web.UI.WebControls.TextBox FirstName;
 
 		/// <summary>
-		/// UserNameRequired control.
+		/// FirstNameRequired control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameRequired;
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator FirstNameRequired;
+
+		/// <summary>
+		/// LastNameLabel control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label LastNameLabel;
+
+		/// <summary>
+		/// LastName control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox LastName;
+
+		/// <summary>
+		/// LastNameRequired control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator LastNameRequired;
 
 		/// <summary>
 		/// EmailLabel control.
@@ -92,6 +119,51 @@ namespace Capstone1 {
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.RegularExpressionValidator EmailValidator;
+
+		/// <summary>
+		/// PhoneLabel control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label PhoneLabel;
+
+		/// <summary>
+		/// Phone control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox Phone;
+
+		/// <summary>
+		/// RoleLabel control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label RoleLabel;
+
+		/// <summary>
+		/// Role control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.DropDownList Role;
+
+		/// <summary>
+		/// RoleRequired control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator RoleRequired;
 
 		/// <summary>
 		/// PasswordLabel control.

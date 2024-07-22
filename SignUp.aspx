@@ -84,10 +84,15 @@
                 <!-- Display ErrorMessageEmail -->
                 <asp:Label ID="ErrorMessageEmail" runat="server" CssClass="error-message" />
 
-                <!-- Username input -->
-                <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName" CssClass="signup-label">Username:</asp:Label>
-                <asp:TextBox ID="UserName" runat="server" CssClass="signup-input"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="The username is required." CssClass="error-message" />
+                <!-- First Name input -->
+                <asp:Label ID="FirstNameLabel" runat="server" AssociatedControlID="FirstName" CssClass="signup-label">First Name:</asp:Label>
+                <asp:TextBox ID="FirstName" runat="server" CssClass="signup-input"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="FirstNameRequired" runat="server" ControlToValidate="FirstName" ErrorMessage="First name is required." CssClass="error-message" />
+
+                <!-- Last Name input -->
+                <asp:Label ID="LastNameLabel" runat="server" AssociatedControlID="LastName" CssClass="signup-label">Last Name:</asp:Label>
+                <asp:TextBox ID="LastName" runat="server" CssClass="signup-input"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="LastNameRequired" runat="server" ControlToValidate="LastName" ErrorMessage="Last name is required." CssClass="error-message" />
 
                 <!-- Email input -->
                 <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email" CssClass="signup-label">Email:</asp:Label>
@@ -96,10 +101,23 @@
                 <asp:RegularExpressionValidator ID="EmailValidator" runat="server" ControlToValidate="Email"
                     ErrorMessage="Please enter a valid email address." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" CssClass="error-message" />
 
+                <!-- Phone input -->
+                <asp:Label ID="PhoneLabel" runat="server" AssociatedControlID="Phone" CssClass="signup-label">Phone:</asp:Label>
+                <asp:TextBox ID="Phone" runat="server" CssClass="signup-input"></asp:TextBox>
+
+                <!-- Role selection -->
+                <asp:Label ID="RoleLabel" runat="server" AssociatedControlID="Role" CssClass="signup-label">Role:</asp:Label>
+                <asp:DropDownList ID="Role" runat="server" CssClass="signup-input">
+                    <asp:ListItem Text="Select Role" Value="" />
+                    <asp:ListItem Text="Admin" Value="admin" />
+                    <asp:ListItem Text="Dealer" Value="dealer" />
+                </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RoleRequired" runat="server" ControlToValidate="Role" InitialValue="" ErrorMessage="Role is required." CssClass="error-message" />
+
                 <!-- Password input -->
                 <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" CssClass="signup-label">Password:</asp:Label>
                 <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="signup-input"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="The password is required." CssClass="error-message" />
+                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Password is required." CssClass="error-message" />
 
                 <!-- Confirm Password input -->
                 <asp:Label ID="ConfirmPasswordLabel" runat="server" AssociatedControlID="ConfirmPassword" CssClass="signup-label">Confirm Password:</asp:Label>

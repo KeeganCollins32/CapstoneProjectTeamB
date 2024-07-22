@@ -3,11 +3,12 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Web;
-using System.Web.UI.WebControls;
-using System.Web.Security;
+using System.Web.UI;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Capstone1 {
-    public partial class Login : System.Web.UI.Page {
+    public partial class Login : Page {
         protected void Page_Load(object sender, EventArgs e) {
             // Display error message if present in ViewState
             if (ViewState["ErrorMessage"] != null) {
@@ -17,78 +18,86 @@ namespace Capstone1 {
         }
 
         protected void LoginButton_Click(object sender, EventArgs e) {
-            // Retrieve the username and password from the Login control
-            string emailOrUsername = Login1.UserName;
-            string password = Login1.Password;
+            // Retrieve the email and password from the TextBox controls
+            string email = Email.Text.Trim();
+            string password = Password.Text.Trim();
 
             // Validate input
-            if (string.IsNullOrEmpty(emailOrUsername) || string.IsNullOrEmpty(password)) {
-                ErrorMessage.Text = "Username or email and password are required.";
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password)) {
+                ErrorMessage.Text = "Email and password are required.";
                 return;
             }
 
+            // Hash the password
+            string hashedPassword = HashPassword(password);
+
             // Retrieve the connection string from web.config
-            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["MyDbContext"]?.ConnectionString;
+
+            // Check if connection string is null
+            if (string.IsNullOrEmpty(connectionString)) {
+                ErrorMessage.Text = "Database connection string is not configured.";
+                return;
+            }
 
             try {
                 using (MySqlConnection conn = new MySqlConnection(connectionString)) {
                     conn.Open();
 
-                    using (MySqlCommand cmd = new MySqlCommand("LoginUser", conn)) {
-                        cmd.CommandType = CommandType.StoredProcedure;
+                    string query = "SELECT * FROM users WHERE email = @email AND password = @password";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn)) {
+                        cmd.Parameters.AddWithValue("@email", email);
+                        cmd.Parameters.AddWithValue("@password", hashedPassword);
 
-                        // Set parameters
-                        cmd.Parameters.AddWithValue("pEmailOrUsername", emailOrUsername);
-                        cmd.Parameters.AddWithValue("pPassword", password);
+                        // Log the query for debugging
+                        Console.WriteLine($"Executing SQL Query: {query}");
+                        Console.WriteLine($"Parameters: Email = {email}, Password = {hashedPassword}");
 
-                        // Define output parameters
-                        MySqlParameter resultParam = new MySqlParameter("pResult", MySqlDbType.Int32) {
-                            Direction = ParameterDirection.Output
-                        };
-                        cmd.Parameters.Add(resultParam);
+                        using (MySqlDataReader reader = cmd.ExecuteReader()) {
+                            if (reader.Read()) {
+                                // Login successful
+                                Session["Username"] = email;
+                                Session["IsLoggedIn"] = true;
 
-                        MySqlParameter errorMsgParam = new MySqlParameter("pErrorMsg", MySqlDbType.VarChar, 255) {
-                            Direction = ParameterDirection.Output
-                        };
-                        cmd.Parameters.Add(errorMsgParam);
-
-                        // Execute the command
-                        cmd.ExecuteNonQuery();
-
-                        // Retrieve results
-                        int result = Convert.ToInt32(resultParam.Value);
-                        string errorMsg = errorMsgParam.Value.ToString();
-
-                        // Check if login was successful
-                        if (result == 1) {
-                            // Start session
-                            Session["Username"] = emailOrUsername;
-                            Session["IsLoggedIn"] = true;
-
-                            // Confirm session variables
-                            if (Session["Username"] != null && (bool)Session["IsLoggedIn"]) {
                                 // Redirect to Default.aspx
                                 Response.Redirect("Default.aspx", false);
                                 HttpContext.Current.ApplicationInstance.CompleteRequest();
                             }
                             else {
-                                ErrorMessage.Text = "Session variables are not set properly.";
+                                // Invalid login
+                                ErrorMessage.Text = "Invalid email or password.";
+                                ViewState["ErrorMessage"] = "Invalid email or password.";
                             }
-                        }
-                        else {
-                            // Display error message
-                            ErrorMessage.Text = errorMsg;
-                            ViewState["ErrorMessage"] = errorMsg;
                         }
                     }
                 }
             }
+            catch (MySqlException mySqlEx) {
+                // Log MySql-specific exceptions
+                Console.WriteLine($"MySqlException: {mySqlEx.Message}\nStack Trace: {mySqlEx.StackTrace}");
+                ErrorMessage.Text = "A database error occurred. Please try again.";
+            }
             catch (Exception ex) {
-                // Log the exception details
+                // Log general exceptions
                 Console.WriteLine($"Exception: {ex.Message}\nStack Trace: {ex.StackTrace}");
-                // Optionally, set a user-friendly error message
                 ErrorMessage.Text = "An error occurred. Please try again.";
+            }
+        }
+        
+        // Method to hash the password using SHA256
+        private string HashPassword(string password) {
+            using (SHA256 sha256 = SHA256.Create()) {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++) {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
             }
         }
     }
 }
+
+
+
+
