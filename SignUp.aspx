@@ -105,15 +105,6 @@
                 <asp:Label ID="PhoneLabel" runat="server" AssociatedControlID="Phone" CssClass="signup-label">Phone:</asp:Label>
                 <asp:TextBox ID="Phone" runat="server" CssClass="signup-input"></asp:TextBox>
 
-                <!-- Role selection -->
-                <asp:Label ID="RoleLabel" runat="server" AssociatedControlID="Role" CssClass="signup-label">Role:</asp:Label>
-                <asp:DropDownList ID="Role" runat="server" CssClass="signup-input">
-                    <asp:ListItem Text="Select Role" Value="" />
-                    <asp:ListItem Text="Admin" Value="admin" />
-                    <asp:ListItem Text="Dealer" Value="dealer" />
-                </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="RoleRequired" runat="server" ControlToValidate="Role" InitialValue="" ErrorMessage="Role is required." CssClass="error-message" />
-
                 <!-- Password input -->
                 <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" CssClass="signup-label">Password:</asp:Label>
                 <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="signup-input"></asp:TextBox>

@@ -2,7 +2,7 @@
 using System.Web.UI;
 
 namespace Capstone1 {
-    public partial class Estimate : Page {
+    public partial class Estimate : BasePage {
         protected void Page_Load(object sender, EventArgs e) {
             // Any page initialization code here
         }

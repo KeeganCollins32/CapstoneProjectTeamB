@@ -21,6 +21,7 @@
 .nav-left a.active,
 .nav-right a.active {
 	color: #ff6347; /* Orange color */
+	font-weight: bold; /* Optional: makes the active link stand out */
 	/* Add any additional styling for active links */
 }
 

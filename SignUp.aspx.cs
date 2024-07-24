@@ -13,7 +13,7 @@ namespace Capstone1 {
             string email = Email.Text;
             string password = Password.Text;
             string phone = Phone.Text;
-            string role = Role.SelectedValue;
+            string userType = "Client"; // Automatically assigning the user type to "Client"
 
             if (IsValid) {
                 ErrorMessageEmail.Text = "";
@@ -21,7 +21,7 @@ namespace Capstone1 {
 
                 var userService = new UserService();
 
-                if (userService.RegisterUser(email, password, firstName, lastName, phone, role)) {
+                if (userService.RegisterUser(email, password, firstName, lastName, phone, userType)) {
                     // Registration successful
                     Response.Redirect("Login.aspx");
                 }
