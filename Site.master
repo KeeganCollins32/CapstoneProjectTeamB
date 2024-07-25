@@ -59,8 +59,8 @@
             <asp:ContentPlaceHolder ID="footerContent" runat="server">
                 <p>&copy; 2024 Cincy Dent Repair. All rights reserved.</p>
                 <div class="footer-links">
-                    <asp:HyperLink ID="PrivacyLink" runat="server" NavigateUrl="~/Privacy.aspx">Privacy Policy</asp:HyperLink>
-                    <asp:HyperLink ID="TermsLink" runat="server" NavigateUrl="~/Terms.aspx">Terms of Service</asp:HyperLink>
+                    <asp:HyperLink ID="PrivacyLink" runat="server" NavigateUrl="~/PrivacyPolicy.aspx">Privacy Policy</asp:HyperLink>
+                    <asp:HyperLink ID="TermsLink" runat="server" NavigateUrl="~/TermsOfService.aspx">Terms of Service</asp:HyperLink>
                     <asp:HyperLink ID="ContactLink" runat="server" NavigateUrl="~/AboutUs.aspx">Contact Us</asp:HyperLink>
                 </div>
             </asp:ContentPlaceHolder>

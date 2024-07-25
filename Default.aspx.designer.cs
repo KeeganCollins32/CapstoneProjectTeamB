@@ -13,6 +13,24 @@ namespace Capstone1 {
 	public partial class Default {
 
 		/// <summary>
+		/// btnGetQuote control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button btnGetQuote;
+
+		/// <summary>
+		/// btnLearnMore control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button btnLearnMore;
+
+		/// <summary>
 		/// CustomerEstimateButton control.
 		/// </summary>
 		/// <remarks>

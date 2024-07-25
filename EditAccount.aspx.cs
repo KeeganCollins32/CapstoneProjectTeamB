@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.UI;
-using MySql.Data.MySqlClient; // Ensure MySQL.Data is referenced
+using MySql.Data.MySqlClient;
 
 namespace Capstone1 {
     public partial class EditAccount : BasePage {
@@ -36,7 +36,7 @@ namespace Capstone1 {
                                 ProfileImage.ImageUrl = profileImage;
                             }
                             else {
-                                ProfileImage.ImageUrl = "~/Uploads/default-profile.png";
+                                ProfileImage.ImageUrl = "https://picsum.photos/200/200";
                             }
                         }
                     }

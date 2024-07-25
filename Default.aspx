@@ -18,7 +18,7 @@
                         <h1>Welcome to Cincy Dent Repair</h1>
                         <h2>Expert Dent Removal Services</h2>
                         <p>At Cincy Dent Repair, we specialize in providing top-notch, mobile dent repair solutions tailored to your needs.</p>
-                        <button class="button-primary">Get a Quote</button>
+                        <asp:Button ID="btnGetQuote" runat="server" Text="Get a Quote" CssClass="button-primary" OnClick="btnGetQuote_Click" />
                     </div>
                 </div>
                 <div class="hero-slide">
@@ -27,7 +27,7 @@
                         <h1>Quality and Efficiency</h1>
                         <h2>Repairing Dents with Precision</h2>
                         <p>Our skilled technicians use advanced techniques to ensure your vehicle looks flawless again.</p>
-                        <button class="button-primary">Learn More</button>
+                        <asp:Button ID="btnLearnMore" runat="server" Text="Learn More" CssClass="button-primary" OnClick="btnLearnMore_Click" />
                     </div>
                 </div>
                 <!-- Add more slides as needed -->
@@ -40,7 +40,7 @@
                 <div class="service-text">
                     <h2>For Customers</h2>
                     <p>Easily enter your personal information and vehicle details for accurate estimates.</p>
-                    <asp:Button ID="CustomerEstimateButton" runat="server" Text="Get Estimate" CssClass="button-secondary" />
+                    <asp:Button ID="CustomerEstimateButton" runat="server" Text="Get Estimate" CssClass="button-secondary" OnClick="CustomerEstimateButton_Click" />
                 </div>
                 <div class="service-image">
                     <img src="https://picsum.photos/800/600" alt="Service Image 1" />
@@ -93,7 +93,7 @@
             <!-- FAQs section -->
             <h3>Have Questions? We've Got Answers.</h3>
             <p>Check out our frequently asked questions section to find answers to common inquiries. If you can't find what you're looking for, feel free to contact us directly.</p>
-            <asp:Button ID="FAQButton" runat="server" Text="View FAQs" CssClass="button-secondary" />
+            <asp:Button ID="FAQButton" runat="server" Text="View FAQs" CssClass="button-secondary" OnClick="FAQButton_Click" />
         </div>  
     </div>
 </asp:Content>

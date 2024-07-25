@@ -11,6 +11,32 @@ namespace Capstone1 {
             // Your page load logic
         }
 
-        // Other methods and event handlers
+        protected void btnGetQuote_Click(object sender, EventArgs e) {
+            if (Session["UserID"] != null)
+            {
+                Response.Redirect("Estimate.aspx");
+            }
+            else {
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+        protected void btnLearnMore_Click(object sender, EventArgs e) {
+            Response.Redirect("AboutUs.aspx");
+        }
+
+        protected void CustomerEstimateButton_Click(object sender, EventArgs e) {
+            if (Session["UserID"] != null)
+            {
+                Response.Redirect("Estimate.aspx");
+            }
+            else {
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+        protected void FAQButton_Click(object sender, EventArgs e) {
+            Response.Redirect("FAQs.aspx");
+        }
     }
 }

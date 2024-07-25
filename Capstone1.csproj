@@ -167,15 +167,18 @@
     <Content Include="AboutUs.aspx" />
     <Content Include="EditAccount.aspx" />
     <Content Include="Estimate.aspx" />
+    <Content Include="FAQs.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Invoices.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="PrivacyPolicy.aspx" />
     <Content Include="Scripts\hero-slider.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="SignUp.aspx" />
     <Content Include="Styles\Site.css" />
+    <Content Include="TermsOfService.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +214,13 @@
     <Compile Include="Estimate.aspx.designer.cs">
       <DependentUpon>Estimate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FAQs.aspx.cs">
+      <DependentUpon>FAQs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQs.aspx.designer.cs">
+      <DependentUpon>FAQs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -236,6 +246,20 @@
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyDbContext.cs" />
+    <Compile Include="PrivacyPolicy.aspx.cs">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivacyPolicy.aspx.designer.cs">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TermsOfService.aspx.cs">
+      <DependentUpon>TermsOfService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermsOfService.aspx.designer.cs">
+      <DependentUpon>TermsOfService.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UploadImageHandler.ashx.cs">
       <DependentUpon>UploadImageHandler.ashx</DependentUpon>
     </Compile>
