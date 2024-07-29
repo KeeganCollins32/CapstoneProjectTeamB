@@ -13,13 +13,31 @@ namespace Capstone1 {
 	public partial class Estimate {
 
 		/// <summary>
-		/// FileUpload control.
+		/// uploadMessage control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.FileUpload FileUpload;
+		protected global::System.Web.UI.WebControls.Label uploadMessage;
+
+		/// <summary>
+		/// uploadErrorMessage control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label uploadErrorMessage;
+
+		/// <summary>
+		/// FileUploadControl control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.FileUpload FileUploadControl;
 
 		/// <summary>
 		/// UploadImageButton control.
@@ -31,94 +49,76 @@ namespace Capstone1 {
 		protected global::System.Web.UI.WebControls.Button UploadImageButton;
 
 		/// <summary>
-		/// FirstName control.
+		/// UploadedImagesList control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox FirstName;
+		protected global::System.Web.UI.WebControls.ListBox UploadedImagesList;
 
 		/// <summary>
-		/// LastName control.
+		/// ValidationSummary1 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox LastName;
+		protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
 
 		/// <summary>
-		/// Email control.
+		/// FirstNameRequired control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox Email;
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator FirstNameRequired;
 
 		/// <summary>
-		/// PhoneNumber control.
+		/// FirstNameTextBox control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox PhoneNumber;
+		protected global::System.Web.UI.WebControls.TextBox FirstNameTextBox;
 
 		/// <summary>
-		/// VehicleBrand control.
+		/// LastNameRequired control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.DropDownList VehicleBrand;
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator LastNameRequired;
 
 		/// <summary>
-		/// VehicleModel control.
+		/// LastNameTextBox control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.DropDownList VehicleModel;
+		protected global::System.Web.UI.WebControls.TextBox LastNameTextBox;
 
 		/// <summary>
-		/// VehicleYear control.
+		/// EmailRequired control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.DropDownList VehicleYear;
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator EmailRequired;
 
 		/// <summary>
-		/// Message control.
+		/// EmailRegularExpression control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox Message;
-
-		/// <summary>
-		/// AcceptTerms control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.CheckBox AcceptTerms;
-
-		/// <summary>
-		/// Button2 control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button Button2;
+		protected global::System.Web.UI.WebControls.RegularExpressionValidator EmailRegularExpression;
 
 		/// <summary>
 		/// EmailTextBox control.
@@ -130,12 +130,102 @@ namespace Capstone1 {
 		protected global::System.Web.UI.WebControls.TextBox EmailTextBox;
 
 		/// <summary>
-		/// SubscribeButton control.
+		/// PhoneNumberRequired control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button SubscribeButton;
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator PhoneNumberRequired;
+
+		/// <summary>
+		/// PhoneNumberTextBox control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox PhoneNumberTextBox;
+
+		/// <summary>
+		/// VehicleBrandRequired control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator VehicleBrandRequired;
+
+		/// <summary>
+		/// VehicleBrandDropDown control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.DropDownList VehicleBrandDropDown;
+
+		/// <summary>
+		/// VehicleModelRequired control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator VehicleModelRequired;
+
+		/// <summary>
+		/// VehicleModelDropDown control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.DropDownList VehicleModelDropDown;
+
+		/// <summary>
+		/// VehicleYearRequired control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator VehicleYearRequired;
+
+		/// <summary>
+		/// VehicleYearDropDown control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.DropDownList VehicleYearDropDown;
+
+		/// <summary>
+		/// MessageRequired control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator MessageRequired;
+
+		/// <summary>
+		/// MessageTextBox control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox MessageTextBox;
+
+		/// <summary>
+		/// SubmitButton control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button SubmitButton;
 	}
 }

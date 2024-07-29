@@ -195,3 +195,5 @@ C:\Users\keega\Downloads\CapstoneTeamB\obj\Debug\Capstone1.csproj.CoreCompileInp
 C:\Users\keega\Downloads\CapstoneTeamB\obj\Debug\Capstone1.csproj.CopyComplete
 C:\Users\keega\Downloads\CapstoneTeamB\obj\Debug\Capstone1.dll
 C:\Users\keega\Downloads\CapstoneTeamB\obj\Debug\Capstone1.pdb
+C:\Users\keega\Downloads\CapstoneTeamB\bin\Renci.SshNet.dll
+C:\Users\keega\Downloads\CapstoneTeamB\bin\Renci.SshNet.xml

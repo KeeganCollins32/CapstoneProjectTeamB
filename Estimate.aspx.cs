@@ -1,61 +1,111 @@
 ﻿using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
+using MySql.Data.MySqlClient;
 
 namespace Capstone1 {
-    public partial class Estimate : BasePage {
+    public partial class Estimate : Page {
+        private string connectionString = "Server=38.242.202.171;Port=30000;Database=Dent_Repair;Uid=root;Pwd=root;";
+
         protected void Page_Load(object sender, EventArgs e) {
-            // Any page initialization code here
+            if (!IsPostBack) {
+                PopulateVehicleDropdowns();
+                PopulateUserProfile();
+            }
+        }
+
+        private void PopulateVehicleDropdowns() {
+            using (MySqlConnection conn = new MySqlConnection(connectionString)) {
+                conn.Open();
+
+                // Populate Vehicle Brand dropdown
+                string query = "SELECT VehicleBrandID, VehicleBrand FROM vehiclebrand";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                VehicleBrandDropDown.DataSource = reader;
+                VehicleBrandDropDown.DataTextField = "VehicleBrand";
+                VehicleBrandDropDown.DataValueField = "VehicleBrandID";
+                VehicleBrandDropDown.DataBind();
+                VehicleBrandDropDown.Items.Insert(0, new ListItem("Select Brand", ""));
+                reader.Close();
+
+                // Populate Vehicle Year dropdown
+                query = "SELECT VehicleYear FROM vehicleyear ORDER BY VehicleYear DESC";
+                cmd.CommandText = query;
+                reader = cmd.ExecuteReader();
+                VehicleYearDropDown.DataSource = reader;
+                VehicleYearDropDown.DataTextField = "VehicleYear";
+                VehicleYearDropDown.DataValueField = "VehicleYear";
+                VehicleYearDropDown.DataBind();
+                VehicleYearDropDown.Items.Insert(0, new ListItem("Select Year", ""));
+                reader.Close();
+            }
+        }
+
+        private void PopulateUserProfile() {
+            if (Session["UserID"] != null) {
+                int userId = Convert.ToInt32(Session["UserID"]);
+
+                using (MySqlConnection connection = new MySqlConnection(connectionString)) {
+                    string query = "SELECT FirstName, LastName, Email, PhoneNumber, ProfilePicture FROM users WHERE UserID = @UserID";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@UserID", userId);
+
+                    try {
+                        connection.Open();
+                        MySqlDataReader reader = command.ExecuteReader();
+
+                        if (reader.Read()) {
+                            FirstNameTextBox.Text = reader["FirstName"].ToString();
+                            LastNameTextBox.Text = reader["LastName"].ToString();
+                            EmailTextBox.Text = reader["Email"].ToString();
+                            PhoneNumberTextBox.Text = reader["PhoneNumber"].ToString();
+                        }
+                        reader.Close();
+                    }
+                    catch (Exception ex) {
+                        // Handle exceptions
+                        System.Diagnostics.Debug.WriteLine("Error: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        protected void VehicleBrandDropDown_SelectedIndexChanged(object sender, EventArgs e) {
+            int selectedBrandId;
+            if (int.TryParse(VehicleBrandDropDown.SelectedValue, out selectedBrandId)) {
+                PopulateVehicleModels(selectedBrandId);
+            }
+        }
+
+        private void PopulateVehicleModels(int brandId) {
+            using (MySqlConnection conn = new MySqlConnection(connectionString)) {
+                conn.Open();
+
+                // Populate Vehicle Model dropdown based on selected brand
+                string query = "SELECT VehicleModelID, VehicleModel FROM vehiclemodel WHERE VehicleBrandID = @VehicleBrandID";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@VehicleBrandID", brandId);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                VehicleModelDropDown.DataSource = reader;
+                VehicleModelDropDown.DataTextField = "VehicleModel";
+                VehicleModelDropDown.DataValueField = "VehicleModelID";
+                VehicleModelDropDown.DataBind();
+                VehicleModelDropDown.Items.Insert(0, new ListItem("Select Model", ""));
+                reader.Close();
+            }
+        }
+
+        protected void VehicleModelDropDown_SelectedIndexChanged(object sender, EventArgs e) {
+            // Handle vehicle model change if needed
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e) {
             // Handle form submission
-            string firstName = FirstName.Text;
-            string lastName = LastName.Text;
-            string email = Email.Text;
-            string phoneNumber = PhoneNumber.Text;
-            string vehicleBrand = VehicleBrand.SelectedValue;
-            string vehicleModel = VehicleModel.SelectedValue;
-            string vehicleYear = VehicleYear.SelectedValue;
-            string message = Message.Text;
-            bool acceptTerms = AcceptTerms.Checked;
-
-            // Add your logic to process the form data here
-
-            // Handle file upload
-            if (FileUpload.HasFile) {
-                string fileName = FileUpload.FileName;
-                // Save the file or perform further processing
-            }
-
-            // Provide feedback to the user, e.g., show a success message
         }
 
         protected void UploadImageButton_Click(object sender, EventArgs e) {
-            // Handle the logic for uploading the image here
-            // Example: Save the uploaded file, process it, etc.
-            // For example purposes, you can check if a file was uploaded
-            if (FileUpload.HasFile) {
-                // Get the file details
-                string fileName = FileUpload.FileName;
-                string filePath = Server.MapPath("~/Uploads/") + fileName;
-
-                // Save the file
-                FileUpload.SaveAs(filePath);
-
-                // Optionally, you can store the file path in a database or perform further processing
-                // Example: Save file path to database
-                // SaveFilePathToDatabase(filePath);
-
-                // Provide feedback to the user (optional)
-                // Response.Write("File uploaded successfully!");
-            }
-            else {
-                // Handle case where no file was uploaded
-                // Response.Write("Please select a file to upload!");
-            }
-
-            // Redirect or display a thank you message as needed
-            Response.Redirect("~/ThankYouPage.aspx"); // Example redirection after submission
+            // Handle image upload
         }
     }
 }

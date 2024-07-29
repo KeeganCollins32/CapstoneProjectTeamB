@@ -89,105 +89,89 @@
             display: table;
             clear: both;
         }
-          
     </style>
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-  <div class="contentEstimate">
-    <div class="hero">
-        <div class="hero-text">
-            <h1>Get Your Free Estimate</h1>
-            <p>Fill out the forms below to get a free estimate for your vehicle repair.</p>
+    <div class="contentEstimate">
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Get Your Free Estimate</h1>
+                <p>Fill out the forms below to get a free estimate for your vehicle repair.</p>
+            </div>
         </div>
-    </div>
 
-    <!-- Upload Image Form -->
-    <div class="upload-image-form">
-        <h2>Upload Detailed Images</h2>
-        <div class="form-group">
-            <label for="FileUpload">Once you've selected your images, press the Upload Images button</label>
-            <asp:FileUpload ID="FileUpload" runat="server" CssClass="form-control" AllowMultiple="true" />
+        <!-- Upload Image Form -->
+        <div class="upload-image-form">
+            <h2>Upload Detailed Images</h2>
+            <div class="form-group">
+                <asp:Label ID="uploadMessage" runat="server" CssClass="success-message" />
+                <asp:Label ID="uploadErrorMessage" runat="server" CssClass="error-message" />
+                <label for="FileUpload">Once you've selected your images, press the Upload Images button</label>
+                <asp:FileUpload ID="FileUploadControl" runat="server" CssClass="form-control" AllowMultiple="true" />
+            </div>
+            <div class="form-group">
+                <asp:Button ID="UploadImageButton" runat="server" Text="Upload Images" CssClass="button-primary" OnClick="UploadImageButton_Click" />
+            </div>
+            <div class="form-group">
+                <asp:ListBox ID="UploadedImagesList" runat="server" CssClass="form-control" Height="200px"></asp:ListBox>
+            </div>
         </div>
-        <div class="form-group">
-            <asp:Button ID="UploadImageButton" runat="server" Text="Upload Images" CssClass="button-primary" OnClick="UploadImageButton_Click" />
-        </div>
-    </div>
 
-    <div class="estimate-form">
-        <h2>Complete Estimate Form</h2>
-        <div class="form-group">
-            <label for="FirstName">First Name</label>
-            <asp:TextBox ID="FirstName" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <label for="LastName">Last Name</label>
-            <asp:TextBox ID="LastName" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <label for="Email">Email</label>
-            <asp:TextBox ID="Email" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <label for="PhoneNumber">Phone Number</label>
-            <asp:TextBox ID="PhoneNumber" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <label for="VehicleBrand">Vehicle Brand</label>
-            <asp:DropDownList ID="VehicleBrand" runat="server" CssClass="form-control">
-                <asp:ListItem Text="Select Brand" Value=""></asp:ListItem>
-                <asp:ListItem Text="Toyota" Value="Toyota"></asp:ListItem>
-                <asp:ListItem Text="Honda" Value="Honda"></asp:ListItem>
-                <asp:ListItem Text="Ford" Value="Ford"></asp:ListItem>     
-            </asp:DropDownList>
-        </div>
-        <div class="form-group">
-            <label for="VehicleModel">Vehicle Model</label>
-            <asp:DropDownList ID="VehicleModel" runat="server" CssClass="form-control">
-                <asp:ListItem Text="Select Model" Value=""></asp:ListItem>
-                <asp:ListItem Text="Camry" Value="Camry"></asp:ListItem>
-                <asp:ListItem Text="Accord" Value="Accord"></asp:ListItem>
-                <asp:ListItem Text="Mustang" Value="Mustang"></asp:ListItem>
-            </asp:DropDownList>
-        </div>
-        <div class="form-group">
-            <label for="VehicleYear">Vehicle Year</label>
-            <asp:DropDownList ID="VehicleYear" runat="server" CssClass="form-control">
-                <asp:ListItem Text="Select Year" Value=""></asp:ListItem>
-                <asp:ListItem Text="2023" Value="2023"></asp:ListItem>
-                <asp:ListItem Text="2022" Value="2022"></asp:ListItem>
-                <asp:ListItem Text="2021" Value="2021"></asp:ListItem>
-            </asp:DropDownList>
-        </div>
-        <div class="form-group">
-            <label for="Message">Message</label>
-            <asp:TextBox ID="Message" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="5"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <label for="AcceptTerms">Accept Terms</label>
-            <asp:CheckBox ID="AcceptTerms" runat="server" CssClass="form-control" />
-        </div>
-        <div class="form-group">
-            <asp:Button ID="Button2" runat="server" Text="Submit" CssClass="button-primary" OnClick="SubmitButton_Click" />
-        </div>
-    </div>
+        <div class="estimate-form">
+            <h2>Complete Estimate Form</h2>
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="error-message" HeaderText="Please correct the following errors:" />
 
-    <div class="contact-info">
-        <h2>Contact Information</h2>
-        <p>For further inquiries, please contact us at:</p>
-        <p>Email: support@cindydentrepair.com</p>
-        <p>Phone: +1 (123) 456-7890</p>
-        <p>Address: 100 Smith Street Collingwood VIC 3066 AU</p>
-    </div>
-</div>
-</asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="SubscribeContent" runat="server">
-    <!-- Subscribe section -->
-    <div class="subscribe">
-        <h3>Stay Updated with Our Latest Offers and News</h3>
-        <p>Subscribe to our newsletter to receive updates on our services, special offers, and industry news. Don't miss out on valuable information that can benefit you.</p>
-        <asp:TextBox ID="EmailTextBox" runat="server" CssClass="form-control" placeholder="Enter your email address" />
-        <asp:Button ID="SubscribeButton" runat="server" Text="Subscribe" CssClass="button-primary" />
+            <div class="form-group">
+                <asp:RequiredFieldValidator ID="FirstNameRequired" runat="server" ControlToValidate="FirstNameTextBox" ErrorMessage="First Name is required" CssClass="error-message" />
+                <label for="FirstName">First Name</label>
+                <asp:TextBox ID="FirstNameTextBox" runat="server" CssClass="form-control" />
+            </div>
+            <div class="form-group">
+                <asp:RequiredFieldValidator ID="LastNameRequired" runat="server" ControlToValidate="LastNameTextBox" ErrorMessage="Last Name is required" CssClass="error-message" />
+                <label for="LastName">Last Name</label>
+                <asp:TextBox ID="LastNameTextBox" runat="server" CssClass="form-control" />
+            </div>
+            <div class="form-group">
+                <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="EmailTextBox" ErrorMessage="Email is required" CssClass="error-message" />
+                <asp:RegularExpressionValidator ID="EmailRegularExpression" runat="server" ControlToValidate="EmailTextBox" ErrorMessage="Invalid email address" CssClass="error-message" ValidationExpression="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b" />
+                <label for="Email">Email</label>
+                <asp:TextBox ID="EmailTextBox" runat="server" CssClass="form-control" TextMode="Email" />
+            </div>
+            <div class="form-group">
+                <asp:RequiredFieldValidator ID="PhoneNumberRequired" runat="server" ControlToValidate="PhoneNumberTextBox" ErrorMessage="Phone Number is required" CssClass="error-message" />
+                <label for="PhoneNumber">Phone Number</label>
+                <asp:TextBox ID="PhoneNumberTextBox" runat="server" CssClass="form-control" />
+            </div>
+            <div class="form-group">
+                <asp:RequiredFieldValidator ID="VehicleBrandRequired" runat="server" ControlToValidate="VehicleBrandDropDown" InitialValue="" ErrorMessage="Vehicle Brand is required" CssClass="error-message" />
+                <label for="VehicleBrand">Vehicle Brand</label>
+                <asp:DropDownList ID="VehicleBrandDropDown" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="VehicleBrandDropDown_SelectedIndexChanged">
+                    <asp:ListItem Text="Select Brand" Value=""></asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <div class="form-group">
+                <asp:RequiredFieldValidator ID="VehicleModelRequired" runat="server" ControlToValidate="VehicleModelDropDown" InitialValue="" ErrorMessage="Vehicle Model is required" CssClass="error-message" />
+                <label for="VehicleModel">Vehicle Model</label>
+                <asp:DropDownList ID="VehicleModelDropDown" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="VehicleModelDropDown_SelectedIndexChanged">
+                    <asp:ListItem Text="Select Model" Value=""></asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <div class="form-group">
+                <asp:RequiredFieldValidator ID="VehicleYearRequired" runat="server" ControlToValidate="VehicleYearDropDown" InitialValue="" ErrorMessage="Vehicle Year is required" CssClass="error-message" />
+                <label for="VehicleYear">Vehicle Year</label>
+                <asp:DropDownList ID="VehicleYearDropDown" runat="server" CssClass="form-control">
+                    <asp:ListItem Text="Select Year" Value=""></asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <div class="form-group">
+                <asp:RequiredFieldValidator ID="MessageRequired" runat="server" ControlToValidate="MessageTextBox" ErrorMessage="Message is required" CssClass="error-message" />
+                <label for="Message">Message</label>
+                <asp:TextBox ID="MessageTextBox" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="5" />
+            </div>
+            <div class="form-group">
+                <asp:Button ID="SubmitButton" runat="server" Text="Submit" CssClass="button-primary" OnClick="SubmitButton_Click" />
+            </div>
+        </div>
     </div>
 </asp:Content>
