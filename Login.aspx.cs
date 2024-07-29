@@ -33,16 +33,21 @@ namespace Capstone1 {
                 using (MySqlConnection conn = new MySqlConnection(connectionString)) {
                     conn.Open();
 
-                    string query = "SELECT UserID FROM users WHERE email = @Email AND password = @Password";
+                    string query = "SELECT UserID, UserType FROM users WHERE email = @Email AND password = @Password";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn)) {
                         cmd.Parameters.AddWithValue("@Email", email);
                         cmd.Parameters.AddWithValue("@Password", password);
 
                         using (MySqlDataReader reader = cmd.ExecuteReader()) {
                             if (reader.Read()) {
-                                // Create session
+                                // Retrieve userID and userType
                                 string userID = reader["UserID"].ToString();
+                                string userType = reader["UserType"].ToString();
+
+                                // Create session
                                 Session["UserID"] = userID; // Set the session variable
+                                Session["UserType"] = userType; // Set the userType session variable
+
                                 string sessionToken = Guid.NewGuid().ToString();
                                 CreateSession(userID, sessionToken);
 
@@ -52,6 +57,7 @@ namespace Capstone1 {
 
                                 // Debugging info
                                 System.Diagnostics.Debug.WriteLine("Session UserID: " + Session["UserID"]);
+                                System.Diagnostics.Debug.WriteLine("Session UserType: " + Session["UserType"]);
                                 System.Diagnostics.Debug.WriteLine("Session Token Cookie: " + Request.Cookies["SessionToken"]?.Value);
 
                                 // Redirect to a protected page
@@ -104,3 +110,4 @@ namespace Capstone1 {
         }
     }
 }
+

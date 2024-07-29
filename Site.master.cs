@@ -8,7 +8,7 @@ namespace Capstone1 {
         protected void Page_Load(object sender, EventArgs e) {
             if (Session["UserID"] != null) {
                 System.Diagnostics.Debug.WriteLine("UserID is set.");
-                DisplayUserNavigation();
+                UpdateNavigation();
             }
             else {
                 System.Diagnostics.Debug.WriteLine("UserID is not set.");
@@ -22,7 +22,18 @@ namespace Capstone1 {
 
         private void UpdateNavigation() {
             if (Session["UserID"] != null) {
-                DisplayUserNavigation();
+                string userType = Session["UserType"] as string;
+                switch (userType) {
+                    case "Technician":
+                        DisplayTechnicianNavigation();
+                        break;
+                    case "Dealership":
+                        DisplayDealershipNavigation();
+                        break;
+                    default:
+                        DisplayUserNavigation();
+                        break;
+                }
             }
             else {
                 DisplayDefaultNavigation();
@@ -34,8 +45,54 @@ namespace Capstone1 {
                 UserNav.Controls.Clear();
                 UserNav.Controls.Add(new LiteralControl(GetNavLink("EditAccount.aspx", "Edit Account")));
                 UserNav.Controls.Add(new LiteralControl(GetNavLink("Estimate.aspx", "Request Estimate")));
-                UserNav.Controls.Add(new LiteralControl(GetNavLink("Invoices.aspx", "User Invoices")));
+                UserNav.Controls.Add(new LiteralControl(GetNavLink("Invoices.aspx", "Invoices")));
                 UserNav.Controls.Add(new LiteralControl(GetNavLink("Logout.aspx", "Log Out")));
+            }
+
+            if (TechnicianNav != null) {
+                TechnicianNav.Visible = false;
+            }
+
+            if (DealershipNav != null) {
+                DealershipNav.Visible = false;
+            }
+        }
+
+        private void DisplayTechnicianNavigation() {
+            if (TechnicianNav != null) {
+                TechnicianNav.Controls.Clear();
+                TechnicianNav.Controls.Add(new LiteralControl(GetNavLink("EditAccount.aspx", "Edit Account")));
+                TechnicianNav.Controls.Add(new LiteralControl(GetNavLink("RequestedEstimates.aspx", "Estimates")));
+                TechnicianNav.Controls.Add(new LiteralControl(GetNavLink("ToolManagement.aspx", "Tool Management")));
+                TechnicianNav.Controls.Add(new LiteralControl(GetNavLink("Invoices.aspx", "Invoices")));
+                TechnicianNav.Controls.Add(new LiteralControl(GetNavLink("DealershipCreation.aspx", "Create Dealership")));
+                TechnicianNav.Controls.Add(new LiteralControl(GetNavLink("Logout.aspx", "Log Out")));
+            }
+
+            if (UserNav != null) {
+                UserNav.Visible = false;
+            }
+
+            if (DealershipNav != null) {
+                DealershipNav.Visible = false;
+            }
+        }
+
+        private void DisplayDealershipNavigation() {
+            if (DealershipNav != null) {
+                DealershipNav.Controls.Clear();
+                DealershipNav.Controls.Add(new LiteralControl(GetNavLink("EditAccount.aspx", "Edit Account")));
+                DealershipNav.Controls.Add(new LiteralControl(GetNavLink("DealershipEstimate.aspx", "Request Estimate")));
+                UserNav.Controls.Add(new LiteralControl(GetNavLink("Invoices.aspx", "Invoices")));
+                DealershipNav.Controls.Add(new LiteralControl(GetNavLink("Logout.aspx", "Log Out")));
+            }
+
+            if (UserNav != null) {
+                UserNav.Visible = false;
+            }
+
+            if (TechnicianNav != null) {
+                TechnicianNav.Visible = false;
             }
         }
 
@@ -44,6 +101,14 @@ namespace Capstone1 {
                 UserNav.Controls.Clear();
                 UserNav.Controls.Add(new LiteralControl(GetNavLink("Login.aspx", "Log In")));
                 UserNav.Controls.Add(new LiteralControl(GetNavLink("Signup.aspx", "Sign Up")));
+            }
+
+            if (TechnicianNav != null) {
+                TechnicianNav.Visible = false;
+            }
+
+            if (DealershipNav != null) {
+                DealershipNav.Visible = false;
             }
         }
 

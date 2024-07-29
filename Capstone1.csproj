@@ -166,28 +166,48 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DealershipCreation.aspx" />
+    <Content Include="DealershipEstimate.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="AboutUs.aspx" />
     <Content Include="EditAccount.aspx" />
     <Content Include="Estimate.aspx" />
     <Content Include="FAQs.aspx" />
+    <Content Include="ForgotPassword.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Invoices.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="PrivacyPolicy.aspx" />
+    <Content Include="RequestedEstimates.aspx" />
     <Content Include="Scripts\hero-slider.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="SignUp.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="TermsOfService.aspx" />
+    <Content Include="ToolManagement.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="DealershipCreation.aspx.cs">
+      <DependentUpon>DealershipCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DealershipCreation.aspx.designer.cs">
+      <DependentUpon>DealershipCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DealershipEstimate.aspx.cs">
+      <DependentUpon>DealershipEstimate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DealershipEstimate.aspx.designer.cs">
+      <DependentUpon>DealershipEstimate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DealershipService.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -224,6 +244,13 @@
     <Compile Include="FAQs.aspx.designer.cs">
       <DependentUpon>FAQs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -256,12 +283,26 @@
     <Compile Include="PrivacyPolicy.aspx.designer.cs">
       <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RequestedEstimates.aspx.cs">
+      <DependentUpon>RequestedEstimates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestedEstimates.aspx.designer.cs">
+      <DependentUpon>RequestedEstimates.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TermsOfService.aspx.cs">
       <DependentUpon>TermsOfService.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TermsOfService.aspx.designer.cs">
       <DependentUpon>TermsOfService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ToolManagement.aspx.cs">
+      <DependentUpon>ToolManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ToolManagement.aspx.designer.cs">
+      <DependentUpon>ToolManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="UploadImageHandler.ashx.cs">
       <DependentUpon>UploadImageHandler.ashx</DependentUpon>

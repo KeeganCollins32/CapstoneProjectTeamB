@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="Capstone1.SignUp" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DealershipCreation.aspx.cs" Inherits="Capstone1.DealershipCreation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -76,18 +76,24 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="content">
-        <h1 class="page-title">Sign Up - Cincy Dent Repair</h1>
+        <h1 class="page-title">Create Dealership - Cincy Dent Repair</h1>
         <div class="signup-container">
             <div class="signup-form">
-                <!-- First Name input -->
-                <asp:Label ID="FirstNameLabel" runat="server" AssociatedControlID="FirstName" CssClass="signup-label">First Name:</asp:Label>
-                <asp:TextBox ID="FirstName" runat="server" CssClass="signup-input"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="FirstNameRequired" runat="server" ControlToValidate="FirstName" ErrorMessage="First name is required." CssClass="error-message" />
+                <!-- Display ErrorMessages -->
+                <asp:Label ID="ErrorMessageDealershipName" runat="server" CssClass="error-message" />
+                <asp:Label ID="ErrorMessageDealershipBrand" runat="server" CssClass="error-message" />
+                <asp:Label ID="ErrorMessagePassword" runat="server" CssClass="error-message" />
+                <asp:Label ID="ErrorMessageConfirmPassword" runat="server" CssClass="error-message" />
 
-                <!-- Last Name input -->
-                <asp:Label ID="LastNameLabel" runat="server" AssociatedControlID="LastName" CssClass="signup-label">Last Name:</asp:Label>
-                <asp:TextBox ID="LastName" runat="server" CssClass="signup-input"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="LastNameRequired" runat="server" ControlToValidate="LastName" ErrorMessage="Last name is required." CssClass="error-message" />
+                <!-- Dealership Name input -->
+                <asp:Label ID="DealershipNameLabel" runat="server" AssociatedControlID="DealershipName" CssClass="signup-label">Dealership Name:</asp:Label>
+                <asp:TextBox ID="DealershipName" runat="server" CssClass="signup-input"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="DealershipNameRequired" runat="server" ControlToValidate="DealershipName" ErrorMessage="Dealership name is required." CssClass="error-message" />
+
+                <!-- Dealership Brand input -->
+                <asp:Label ID="DealershipBrandLabel" runat="server" AssociatedControlID="DealershipBrand" CssClass="signup-label">Dealership Brand:</asp:Label>
+                <asp:TextBox ID="DealershipBrand" runat="server" CssClass="signup-input"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="DealershipBrandRequired" runat="server" ControlToValidate="DealershipBrand" ErrorMessage="Dealership brand is required." CssClass="error-message" />
 
                 <!-- Email input -->
                 <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email" CssClass="signup-label">Email:</asp:Label>
@@ -118,14 +124,9 @@
                 <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
                     ErrorMessage="The passwords do not match." CssClass="error-message" />
 
-                <!-- Sign Up button -->
+                <!-- Submit button -->
                 <div class="signup-button">
-                    <asp:Button ID="SignUpButton" runat="server" Text="Sign Up" CssClass="button-primary" OnClick="SignUpButton_Click" />
-                </div>
-
-                <!-- Login link -->
-                <div class="login-link">
-                    Already have an account? <asp:HyperLink ID="LoginLink" runat="server" NavigateUrl="Login.aspx" CssClass="login-link">Log in</asp:HyperLink>
+                    <asp:Button ID="SubmitButton" runat="server" Text="Create Dealership" CssClass="button-primary" OnClick="SubmitButton_Click" />
                 </div>
             </div>
         </div>

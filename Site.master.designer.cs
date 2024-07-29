@@ -58,6 +58,24 @@ namespace Capstone1 {
 		protected global::System.Web.UI.WebControls.PlaceHolder UserNav;
 
 		/// <summary>
+		/// TechnicianNav control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.PlaceHolder TechnicianNav;
+
+		/// <summary>
+		/// DealershipNav control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.PlaceHolder DealershipNav;
+
+		/// <summary>
 		/// MainContent control.
 		/// </summary>
 		/// <remarks>

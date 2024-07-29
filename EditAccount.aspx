@@ -194,6 +194,11 @@
                 <label for="PhoneNumber">Phone Number</label>
                 <asp:TextBox ID="PhoneNumber" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
+            <!-- Form group for Address -->
+            <div class="form-group">
+                <label for="Address">Address</label>
+                <asp:TextBox ID="Address" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
             <!-- Update profile button -->
             <div class="form-group">
                 <asp:Button ID="ButtonUpdate" runat="server" Text="Update Profile" CssClass="button-primary" OnClick="ButtonUpdate_Click" />

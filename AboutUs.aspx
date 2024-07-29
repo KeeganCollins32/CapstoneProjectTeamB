@@ -4,7 +4,6 @@
     <!-- Page-specific head content -->
     <!-- Additional page-specific scripts or styles -->
     <style>
-        /* Styling for the small image */
         .small-image {
             max-width: 200px; 
             display: block; 
@@ -12,7 +11,7 @@
             border-radius: 50%; 
         }
 
-        /* Styling for About Us Header */
+        
         .AboutUsHeader {
             text-align: center; 
             margin-top: 25px; 
@@ -81,7 +80,7 @@
             <h1>We're Here to Help</h1>
             <p>Email: <a href="CincyDentReapir@yahoo.com">CincyDentReapir@yahoo.com</a></p>
             <p>Phone: <a href="tel:+15550000000">+1 (555) 000-0000</a></p>
-            <p>Office: 123 Sample St, Cincinnati OH 12345 US</p>
+            <p>Office: <a href="https://www.google.com/maps/search/?api=1&query=123+Sample+St,+Cincinnati,+OH+12345" target="_blank">123 Sample St, 12345 Cincinnati OH</a></p>
         </section>
     </div>
 </asp:Content>

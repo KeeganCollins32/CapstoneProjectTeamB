@@ -12,23 +12,31 @@ namespace Capstone1 {
             string lastName = LastName.Text;
             string email = Email.Text;
             string password = Password.Text;
+            string confirmPassword = ConfirmPassword.Text;
             string phone = Phone.Text;
+            string address = Address.Text;
             string userType = "Client"; // Automatically assigning the user type to "Client"
 
-            if (IsValid) {
-                ErrorMessageEmail.Text = "";
-                ErrorMessage.Text = "";
+            // Validate passwords match
+            if (password != confirmPassword) {
+                // Optionally display a message on the page if you want to show feedback
+                // e.g., ErrorMessageConfirmPassword.Text = "Passwords do not match.";
+                return; // Exit the method if passwords do not match
+            }
 
-                var userService = new UserService();
+            var userService = new UserService();
 
-                if (userService.RegisterUser(email, password, firstName, lastName, phone, userType)) {
-                    // Registration successful
-                    Response.Redirect("Login.aspx");
-                }
-                else {
-                    // Registration failed - email already exists
-                    ErrorMessageEmail.Text = "Email already exists";
-                }
+            // Attempt to register the user
+            bool registrationSuccessful = userService.RegisterUser(firstName, lastName, email, password, phone, address, userType);
+
+            if (registrationSuccessful) {
+                // Redirect to login page if registration is successful
+                Response.Redirect("Login.aspx");
+            }
+            else {
+                // Optionally handle the case where registration fails
+                // For example, you could display a generic message if needed
+                // e.g., ErrorMessage.Text = "Registration failed. Please try again.";
             }
         }
     }

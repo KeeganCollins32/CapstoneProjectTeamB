@@ -33,6 +33,10 @@ namespace Capstone1 {
                 .HasColumnName("PhoneNumber");
 
             modelBuilder.Entity<User>()
+                .Property(u => u.Address)
+                .HasColumnName("Address");
+
+            modelBuilder.Entity<User>()
                 .Property(u => u.Password)
                 .HasColumnName("Password");
 

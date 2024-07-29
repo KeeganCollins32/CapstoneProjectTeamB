@@ -7,6 +7,7 @@ namespace Capstone1 {
         public string LastName { get; set; } // Matches 'LastName'
         public string Email { get; set; } // Matches 'Email'
         public string PhoneNumber { get; set; } // Matches 'PhoneNumber'
+        public string Address { get; set; } // Matches 'Address'
         public string Password { get; set; } // Matches 'Password'
         public string UserType { get; set; } // Matches 'UserType' and should use enum('Client','Dealership','Technician')
         public string ProfilePicture { get; set; } // Matches 'ProfilePicture', nullable

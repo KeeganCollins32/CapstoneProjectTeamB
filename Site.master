@@ -36,6 +36,12 @@
                 <asp:PlaceHolder ID="UserNav" runat="server">
                     <!-- User-specific navigation links will be injected here -->
                 </asp:PlaceHolder>
+                <asp:PlaceHolder ID="TechnicianNav" runat="server">
+                    <!-- Technician-specific navigation links will be injected here -->
+                </asp:PlaceHolder>
+                <asp:PlaceHolder ID="DealershipNav" runat="server">
+                    <!-- Dealership-specific navigation links will be injected here -->
+                </asp:PlaceHolder>
             </div>
         </div>
         
@@ -58,4 +64,3 @@
     </form>
 </body>
 </html>
-

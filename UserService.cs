@@ -9,7 +9,7 @@ namespace Capstone1 {
             _context = new MyDbContext();
         }
 
-        public bool RegisterUser(string email, string password, string firstName, string lastName, string phoneNumber, string userType) {
+        public bool RegisterUser(string firstName, string lastName, string email, string password, string phoneNumber, string address, string userType) {
             // Check if the user already exists based on email
             if (_context.Users.Any(u => u.Email == email)) {
                 return false; // Email already exists
@@ -21,10 +21,10 @@ namespace Capstone1 {
                 LastName = lastName,
                 Email = email,
                 PhoneNumber = phoneNumber,
+                Address = address,
                 UserType = userType,
-                Password = password, // Store password as is
-                CreatedAt = DateTime.Now, // Set CreatedAt to the current date and time
-                UpdatedAt = DateTime.Now // Set UpdatedAt to the current date and time
+                Password = password, 
+                CreatedAt = DateTime.Now, 
             };
 
             // Save the user to the database

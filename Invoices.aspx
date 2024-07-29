@@ -45,7 +45,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="content">
         <!-- Page title for user invoices -->
-        <h1 class="page-title">User Invoices</h1>
+        <h1 class="page-title">Invoices</h1>
         <div class="invoices-container">
             <!-- Container for the invoices content -->
             <div class="invoices-content">

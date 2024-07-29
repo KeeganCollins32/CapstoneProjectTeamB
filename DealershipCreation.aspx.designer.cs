@@ -10,61 +10,97 @@
 namespace Capstone1 {
 
 
-	public partial class SignUp {
+	public partial class DealershipCreation {
 
 		/// <summary>
-		/// FirstNameLabel control.
+		/// ErrorMessageDealershipName control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label FirstNameLabel;
+		protected global::System.Web.UI.WebControls.Label ErrorMessageDealershipName;
 
 		/// <summary>
-		/// FirstName control.
+		/// ErrorMessageDealershipBrand control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox FirstName;
+		protected global::System.Web.UI.WebControls.Label ErrorMessageDealershipBrand;
 
 		/// <summary>
-		/// FirstNameRequired control.
+		/// ErrorMessagePassword control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator FirstNameRequired;
+		protected global::System.Web.UI.WebControls.Label ErrorMessagePassword;
 
 		/// <summary>
-		/// LastNameLabel control.
+		/// ErrorMessageConfirmPassword control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label LastNameLabel;
+		protected global::System.Web.UI.WebControls.Label ErrorMessageConfirmPassword;
 
 		/// <summary>
-		/// LastName control.
+		/// DealershipNameLabel control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox LastName;
+		protected global::System.Web.UI.WebControls.Label DealershipNameLabel;
 
 		/// <summary>
-		/// LastNameRequired control.
+		/// DealershipName control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator LastNameRequired;
+		protected global::System.Web.UI.WebControls.TextBox DealershipName;
+
+		/// <summary>
+		/// DealershipNameRequired control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator DealershipNameRequired;
+
+		/// <summary>
+		/// DealershipBrandLabel control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label DealershipBrandLabel;
+
+		/// <summary>
+		/// DealershipBrand control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox DealershipBrand;
+
+		/// <summary>
+		/// DealershipBrandRequired control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator DealershipBrandRequired;
 
 		/// <summary>
 		/// EmailLabel control.
@@ -220,21 +256,12 @@ namespace Capstone1 {
 		protected global::System.Web.UI.WebControls.CompareValidator PasswordCompare;
 
 		/// <summary>
-		/// SignUpButton control.
+		/// SubmitButton control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button SignUpButton;
-
-		/// <summary>
-		/// LoginLink control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.HyperLink LoginLink;
+		protected global::System.Web.UI.WebControls.Button SubmitButton;
 	}
 }
