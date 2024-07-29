@@ -37,7 +37,7 @@
 
         .estimate-form, .upload-image-form {
             max-width: 50%;
-            margin: 40px auto; /* Adjust margin as needed */
+            margin: 40px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
@@ -68,8 +68,8 @@
 
         .button-primary {
             display: block;
-            width: fit-content; /* Ensures button width fits its content */
-            margin: 20px auto; /* Center horizontally with auto margins */
+            width: fit-content; 
+            margin: 20px auto; 
             padding: 10px 20px;
             background-color: #ff6347;
             color: #fff;
@@ -101,6 +101,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="contentEstimate">
+        <!-- Hero Section -->
         <div class="hero">
             <div class="hero-text">
                 <h1>Get Your Free Estimate</h1>
@@ -112,44 +113,54 @@
         <div class="upload-image-form">
             <h2>Upload Detailed Images</h2>
             <div class="form-group">
+                <!-- Label for success or error messages related to image upload -->
                 <asp:Label ID="uploadMessage" runat="server" CssClass="success-message" />
                 <asp:Label ID="uploadErrorMessage" runat="server" CssClass="error-message" />
+                <!-- FileUpload control for selecting images -->
                 <label for="FileUpload">Once you've selected your images, press the Upload Images button</label>
                 <asp:FileUpload ID="FileUploadControl" runat="server" CssClass="form-control" AllowMultiple="true" />
             </div>
             <div class="form-group">
+                <!-- Button to trigger the image upload process -->
                 <asp:Button ID="UploadImageButton" runat="server" Text="Upload Images" CssClass="button-primary" OnClick="UploadImageButton_Click" />
             </div>
             <div class="form-group">
+                <!-- ListBox to display the uploaded images -->
                 <asp:ListBox ID="UploadedImagesList" runat="server" CssClass="form-control" Height="200px"></asp:ListBox>
             </div>
         </div>
 
+        <!-- Estimate Form -->
         <div class="estimate-form">
             <h2>Complete Estimate Form</h2>
 
             <div class="form-group">
+                <!-- RequiredFieldValidator for the First Name field -->
                 <asp:RequiredFieldValidator ID="FirstNameRequired" runat="server" ControlToValidate="FirstNameTextBox" ErrorMessage="First Name is required" CssClass="error-message" />
                 <label for="FirstName">First Name</label>
                 <asp:TextBox ID="FirstNameTextBox" runat="server" CssClass="form-control" />
             </div>
             <div class="form-group">
+                <!-- RequiredFieldValidator for the Last Name field -->
                 <asp:RequiredFieldValidator ID="LastNameRequired" runat="server" ControlToValidate="LastNameTextBox" ErrorMessage="Last Name is required" CssClass="error-message" />
                 <label for="LastName">Last Name</label>
                 <asp:TextBox ID="LastNameTextBox" runat="server" CssClass="form-control" />
             </div>
             <div class="form-group">
+                <!-- RequiredFieldValidator and RegularExpressionValidator for the Email field -->
                 <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="EmailTextBox" ErrorMessage="Email is required" CssClass="error-message" />
                 <asp:RegularExpressionValidator ID="EmailRegularExpression" runat="server" ControlToValidate="EmailTextBox" ErrorMessage="Invalid email address" CssClass="error-message" ValidationExpression="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b" />
                 <label for="Email">Email</label>
                 <asp:TextBox ID="EmailTextBox" runat="server" CssClass="form-control" TextMode="Email" />
             </div>
             <div class="form-group">
+                <!-- RequiredFieldValidator for the Phone Number field -->
                 <asp:RequiredFieldValidator ID="PhoneNumberRequired" runat="server" ControlToValidate="PhoneNumberTextBox" ErrorMessage="Phone Number is required" CssClass="error-message" />
                 <label for="PhoneNumber">Phone Number</label>
                 <asp:TextBox ID="PhoneNumberTextBox" runat="server" CssClass="form-control" />
             </div>
             <div class="form-group">
+                <!-- RequiredFieldValidator for the Vehicle Brand dropdown -->
                 <asp:RequiredFieldValidator ID="VehicleBrandRequired" runat="server" ControlToValidate="VehicleBrandDropDown" InitialValue="" ErrorMessage="Vehicle Brand is required" CssClass="error-message" />
                 <label for="VehicleBrand">Vehicle Brand</label>
                 <asp:DropDownList ID="VehicleBrandDropDown" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="VehicleBrandDropDown_SelectedIndexChanged">
@@ -157,6 +168,7 @@
                 </asp:DropDownList>
             </div>
             <div class="form-group">
+                <!-- RequiredFieldValidator for the Vehicle Model dropdown -->
                 <asp:RequiredFieldValidator ID="VehicleModelRequired" runat="server" ControlToValidate="VehicleModelDropDown" InitialValue="" ErrorMessage="Vehicle Model is required" CssClass="error-message" />
                 <label for="VehicleModel">Vehicle Model</label>
                 <asp:DropDownList ID="VehicleModelDropDown" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="VehicleModelDropDown_SelectedIndexChanged">
@@ -164,6 +176,7 @@
                 </asp:DropDownList>
             </div>
             <div class="form-group">
+                <!-- RequiredFieldValidator for the Vehicle Year dropdown -->
                 <asp:RequiredFieldValidator ID="VehicleYearRequired" runat="server" ControlToValidate="VehicleYearDropDown" InitialValue="" ErrorMessage="Vehicle Year is required" CssClass="error-message" />
                 <label for="VehicleYear">Vehicle Year</label>
                 <asp:DropDownList ID="VehicleYearDropDown" runat="server" CssClass="form-control">
@@ -171,13 +184,22 @@
                 </asp:DropDownList>
             </div>
             <div class="form-group">
+                <!-- RequiredFieldValidator for the Message field -->
                 <asp:RequiredFieldValidator ID="MessageRequired" runat="server" ControlToValidate="MessageTextBox" ErrorMessage="Message is required" CssClass="error-message" />
                 <label for="Message">Message</label>
-                <asp:TextBox ID="MessageTextBox" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="5" />
+                <asp:TextBox ID="MessageTextBox" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4" />
             </div>
             <div class="form-group">
-                <asp:Button ID="SubmitButton" runat="server" Text="Submit" CssClass="button-primary" OnClick="SubmitButton_Click" />
+                <!-- CheckBox for accepting terms and conditions -->
+                <asp:CheckBox ID="AcceptTermsCheckBox" runat="server" CssClass="form-control" />
+                <label for="AcceptTermsCheckBox">I accept the terms and conditions</label>
+                <asp:RequiredFieldValidator ID="AcceptTermsRequired" runat="server" ControlToValidate="AcceptTermsCheckBox" InitialValue="false" ErrorMessage="You must accept the terms and conditions" CssClass="error-message" />
+            </div>
+            <div class="form-group">
+                <!-- Button to submit the estimate form -->
+                <asp:Button ID="SubmitEstimateButton" runat="server" Text="Submit Estimate" CssClass="button-primary" OnClick="SubmitEstimateButton_Click" />
             </div>
         </div>
     </div>
 </asp:Content>
+

@@ -26,18 +26,26 @@ namespace Capstone1 {
                         MySqlDataReader reader = command.ExecuteReader();
 
                         if (reader.Read()) {
-                            FirstName.Text = reader["FirstName"].ToString();
-                            LastName.Text = reader["LastName"].ToString();
+                            string firstName = reader["FirstName"].ToString();
+                            string lastName = reader["LastName"].ToString();
                             Email.Text = reader["Email"].ToString();
                             PhoneNumber.Text = reader["PhoneNumber"].ToString();
                             string profileImage = reader["ProfilePicture"].ToString();
 
+                            // Set user's full name
+                            UserNameLabel.Text = $"{firstName} {lastName}";
+
+                            // Set profile image
                             if (!string.IsNullOrEmpty(profileImage)) {
                                 ProfileImage.ImageUrl = profileImage;
                             }
                             else {
                                 ProfileImage.ImageUrl = "https://picsum.photos/200/200";
                             }
+
+                            // Populate text fields with user data
+                            FirstName.Text = firstName;
+                            LastName.Text = lastName;
                         }
                     }
                     catch (Exception ex) {
@@ -74,9 +82,7 @@ namespace Capstone1 {
         }
 
         protected void EditImageLink_Click(object sender, EventArgs e) {
-            // Handle the profile image update here
-            // This is where you might want to open a modal or redirect to a separate page for image upload
-            // For example, you could redirect to an image upload page or open a file picker modal
+            // Logic for editing image
         }
     }
 }

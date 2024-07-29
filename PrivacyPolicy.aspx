@@ -12,18 +12,18 @@
 
         .policy-container {
             text-align: center;
-            margin: 20px auto; /* Center horizontally and add some margin */
+            margin: 20px auto; 
         }
 
         .policy-content {
             display: inline-block;
             text-align: left;
-            width: 80%; /* Adjust width as needed */
+            width: 80%; 
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 0 auto; /* Center horizontally */
+            margin: 0 auto;
         }
 
         .policy-content h2 {
@@ -45,12 +45,16 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="content">
+        <!-- Page title for the privacy policy -->
         <h1 class="page-title">Privacy Policy</h1>
         <div class="policy-container">
+            <!-- Container for the privacy policy content -->
             <div class="policy-content">
+                <!-- Section: Introduction -->
                 <h2>Introduction</h2>
                 <p>We value your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.</p>
 
+                <!-- Section: Information We Collect -->
                 <h2>Information We Collect</h2>
                 <p>We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:</p>
                 <ul>
@@ -62,6 +66,7 @@
                     <li>Marketing and Communications Data: includes your preferences in receiving marketing from us and your communication preferences.</li>
                 </ul>
 
+                <!-- Section: How We Use Your Personal Data -->
                 <h2>How We Use Your Personal Data</h2>
                 <p>We use your personal data in the following ways:</p>
                 <ul>
@@ -72,9 +77,11 @@
                     <li>To comply with legal obligations and protect our rights.</li>
                 </ul>
 
+                <!-- Section: Data Retention -->
                 <h2>Data Retention</h2>
                 <p>We will retain your personal data only for as long as necessary to fulfill the purposes for which it was collected, or as required by law. Once the data is no longer needed, we will securely delete or anonymize it.</p>
 
+                <!-- Section: Your Rights -->
                 <h2>Your Rights</h2>
                 <p>You have rights under data protection laws, including:</p>
                 <ul>
@@ -86,15 +93,19 @@
                     <li>The right to data portability.</li>
                 </ul>
 
+                <!-- Section: Security Measures -->
                 <h2>Security Measures</h2>
                 <p>We implement appropriate technical and organizational measures to protect your personal data from unauthorized access, disclosure, alteration, or destruction. However, no method of transmission over the internet or electronic storage is completely secure.</p>
 
+                <!-- Section: Third-Party Links -->
                 <h2>Third-Party Links</h2>
                 <p>Our website may contain links to third-party sites. We are not responsible for the privacy policies or practices of these sites. We encourage you to read their privacy policies before providing any personal data.</p>
 
+                <!-- Section: Changes to This Privacy Policy -->
                 <h2>Changes to This Privacy Policy</h2>
                 <p>We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. Your continued use of the website after any changes indicates your acceptance of the revised policy.</p>
 
+                <!-- Section: Contact Us -->
                 <h2>Contact Us</h2>
                 <p>If you have any questions or concerns about this privacy policy or our data practices, please contact us at [Contact Information].</p>
             </div>

@@ -211,12 +211,30 @@ namespace Capstone1 {
 		protected global::System.Web.UI.WebControls.TextBox MessageTextBox;
 
 		/// <summary>
-		/// SubmitButton control.
+		/// AcceptTermsCheckBox control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button SubmitButton;
+		protected global::System.Web.UI.WebControls.CheckBox AcceptTermsCheckBox;
+
+		/// <summary>
+		/// AcceptTermsRequired control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator AcceptTermsRequired;
+
+		/// <summary>
+		/// SubmitEstimateButton control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button SubmitEstimateButton;
 	}
 }

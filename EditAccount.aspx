@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="User Profile" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="EditAccount.aspx.cs" Inherits="Capstone1.EditAccount" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <!-- JavaScript for image upload handling -->
     <script type="text/javascript">
 		function triggerFilePicker() {
 			document.getElementById('filePicker').click();
@@ -18,7 +19,6 @@
 				xhr.open('POST', 'UploadImageHandler.ashx', true);
 				xhr.onload = function () {
 					if (xhr.status === 200) {
-						// Update profile image URL
 						document.getElementById('<%= ProfileImage.ClientID %>').src = xhr.responseText;
 					} else {
 						alert('Failed to upload image.');
@@ -27,7 +27,8 @@
 				xhr.send(formData);
 			}
 		}
-</script>
+	</script>
+    <!-- CSS styles specific to this page -->
     <style>
         .contentProfile {
             padding: 20px;
@@ -87,15 +88,15 @@
         }
 
         .default-image {
-            background-color: #333; /* Default circle color */
+            background-color: #333;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .default-image::before {
-            content: "\f007"; /* Unicode for a user outline icon */
-            font-family: FontAwesome; /* Ensure FontAwesome is included in your project */
+            content: "\f007"; 
+            font-family: FontAwesome;
             color: #fff;
             font-size: 50px;
         }
@@ -160,37 +161,45 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <!-- Main content for the User Profile page -->
     <div class="contentProfile">
         <div class="profile-container">
+            <!-- Profile image container with edit overlay -->
             <div class="image-container">
                 <asp:Image ID="ProfileImage" runat="server" CssClass="profile-image" ImageUrl="https://picsum.photos/200/200" />
                 <asp:LinkButton ID="EditImageLink" runat="server" CssClass="edit-image-overlay" Text="✎" OnClientClick="triggerFilePicker(); return false;" />
             </div>
+            <!-- Profile information -->
             <div class="profile-info">
-                <asp:Label ID="UserNameLabel" runat="server" Text="User's Name" CssClass="form-label" />
+                <asp:Label ID="UserNameLabel" runat="server" CssClass="form-label" />
                 <h2>Edit Profile</h2>
             </div>
+            <!-- Form group for first name -->
             <div class="form-group">
                 <label for="FirstName">First Name</label>
                 <asp:TextBox ID="FirstName" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
+            <!-- Form group for last name -->
             <div class="form-group">
                 <label for="LastName">Last Name</label>
                 <asp:TextBox ID="LastName" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
+            <!-- Form group for email -->
             <div class="form-group">
                 <label for="Email">Email</label>
                 <asp:TextBox ID="Email" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
             </div>
+            <!-- Form group for phone number -->
             <div class="form-group">
                 <label for="PhoneNumber">Phone Number</label>
                 <asp:TextBox ID="PhoneNumber" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
+            <!-- Update profile button -->
             <div class="form-group">
                 <asp:Button ID="ButtonUpdate" runat="server" Text="Update Profile" CssClass="button-primary" OnClick="ButtonUpdate_Click" />
             </div>
         </div>
     </div>
-    <!-- Hidden file input -->
+    <!-- Hidden file input for image upload -->
     <input type="file" id="filePicker" style="display: none;" onchange="uploadImage()" />
 </asp:Content>
