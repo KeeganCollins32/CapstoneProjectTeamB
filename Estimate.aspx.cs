@@ -100,7 +100,7 @@ namespace Capstone1 {
             // Handle vehicle model change if needed
         }
 
-        protected void SubmitButton_Click(object sender, EventArgs e) {
+        protected void SubmitEstimateButton_Click(object sender, EventArgs e) {
             // Handle form submission
         }
 

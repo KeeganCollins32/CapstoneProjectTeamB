@@ -22,8 +22,8 @@ namespace Capstone1 {
             Session.Clear();
             Session.Abandon();
 
-            // Redirect to login page
-            Response.Redirect("Login.aspx", false);
+            // Redirect to home page
+            Response.Redirect("Default.aspx", false);
             HttpContext.Current.ApplicationInstance.CompleteRequest();
         }
 

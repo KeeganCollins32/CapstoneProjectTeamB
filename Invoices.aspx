@@ -52,25 +52,24 @@
                 <!-- GridView to display invoices data -->
                 <asp:GridView ID="GridViewInvoices" runat="server" AutoGenerateColumns="False" CssClass="table">
                     <Columns>
-                        <!-- Column for Invoice ID -->
                         <asp:BoundField DataField="InvoiceID" HeaderText="Invoice ID" />
-                        <!-- Column for Customer Name -->
+                       
                         <asp:BoundField DataField="CustomerName" HeaderText="Customer Name" />
-                        <!-- Column for Amount with currency format -->
+                       
                         <asp:BoundField DataField="Amount" HeaderText="Amount" DataFormatString="{0:C}" />
-                        <!-- Column for Date Paid with date format -->
+                        
                         <asp:BoundField DataField="DatePaid" HeaderText="Date Paid" DataFormatString="{0:MM/dd/yyyy}" />
-                        <!-- Column for Vehicle Brand -->
+                       
                         <asp:BoundField DataField="VehicleBrand" HeaderText="Vehicle Brand" />
-                        <!-- Column for Vehicle Model -->
+                       
                         <asp:BoundField DataField="VehicleModel" HeaderText="Vehicle Model" />
-                        <!-- Column for Vehicle Year -->
+                        
                         <asp:BoundField DataField="VehicleYear" HeaderText="Vehicle Year" />
-                        <!-- Column for Job Date with date format -->
+                        
                         <asp:BoundField DataField="JobDate" HeaderText="Job Date" DataFormatString="{0:MM/dd/yyyy}" />
-                        <!-- Column for Technician Name -->
+                        
                         <asp:BoundField DataField="TechnicianName" HeaderText="Technician Name" />
-                        <!-- Column for Job Description -->
+                        
                         <asp:BoundField DataField="JobDescription" HeaderText="Job Description" />
                     </Columns>
                 </asp:GridView>

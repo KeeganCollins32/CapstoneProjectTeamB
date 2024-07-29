@@ -190,12 +190,6 @@
                 <asp:TextBox ID="MessageTextBox" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4" />
             </div>
             <div class="form-group">
-                <!-- CheckBox for accepting terms and conditions -->
-                <asp:CheckBox ID="AcceptTermsCheckBox" runat="server" CssClass="form-control" />
-                <label for="AcceptTermsCheckBox">I accept the terms and conditions</label>
-                <asp:RequiredFieldValidator ID="AcceptTermsRequired" runat="server" ControlToValidate="AcceptTermsCheckBox" InitialValue="false" ErrorMessage="You must accept the terms and conditions" CssClass="error-message" />
-            </div>
-            <div class="form-group">
                 <!-- Button to submit the estimate form -->
                 <asp:Button ID="SubmitEstimateButton" runat="server" Text="Submit Estimate" CssClass="button-primary" OnClick="SubmitEstimateButton_Click" />
             </div>
