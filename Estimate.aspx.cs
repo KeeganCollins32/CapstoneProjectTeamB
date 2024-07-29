@@ -4,7 +4,7 @@ using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
 
 namespace Capstone1 {
-    public partial class Estimate : Page {
+    public partial class Estimate : BasePage {
         private string connectionString = "Server=38.242.202.171;Port=30000;Database=Dent_Repair;Uid=root;Pwd=root;";
 
         protected void Page_Load(object sender, EventArgs e) {

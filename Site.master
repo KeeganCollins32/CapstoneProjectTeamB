@@ -43,17 +43,7 @@
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
             <!-- Content specific to each page will be injected here -->
         </asp:ContentPlaceHolder>
-        
-        <!-- Subscribe Section -->
-        <asp:ContentPlaceHolder ID="SubscribeContent" runat="server">
-            <div class="subscribe">
-                <h3>Stay Updated with Our Latest Offers and News</h3>
-                <p>Subscribe to our newsletter to receive updates on our services, special offers, and industry news. Don't miss out on valuable information that can benefit you.</p>
-                <asp:TextBox ID="EmailTextBox" runat="server" CssClass="form-control" placeholder="Enter your email address" />
-                <asp:Button ID="SubscribeButton" runat="server" Text="Subscribe" CssClass="button-primary" />
-            </div>
-        </asp:ContentPlaceHolder>
-        
+       
         <!-- Footer Section -->
         <footer>
             <asp:ContentPlaceHolder ID="footerContent" runat="server">

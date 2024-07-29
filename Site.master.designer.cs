@@ -67,33 +67,6 @@ namespace Capstone1 {
 		protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
 
 		/// <summary>
-		/// SubscribeContent control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.ContentPlaceHolder SubscribeContent;
-
-		/// <summary>
-		/// EmailTextBox control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox EmailTextBox;
-
-		/// <summary>
-		/// SubscribeButton control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button SubscribeButton;
-
-		/// <summary>
 		/// footerContent control.
 		/// </summary>
 		/// <remarks>

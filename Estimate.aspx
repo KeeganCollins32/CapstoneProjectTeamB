@@ -89,6 +89,13 @@
             display: table;
             clear: both;
         }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
     </style>
 </asp:Content>
 
@@ -120,7 +127,6 @@
 
         <div class="estimate-form">
             <h2>Complete Estimate Form</h2>
-            <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="error-message" HeaderText="Please correct the following errors:" />
 
             <div class="form-group">
                 <asp:RequiredFieldValidator ID="FirstNameRequired" runat="server" ControlToValidate="FirstNameTextBox" ErrorMessage="First Name is required" CssClass="error-message" />
